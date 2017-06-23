@@ -37,6 +37,8 @@
     Pre-ICO Price ETH Address: 0x7C203685291149D5dAd4308781F42A6B945dF4E1
   </h1>
 
+    <h1 id = "price" style = "color: grey; font-size: 15px; margin-top: 30px; display: none; ; position: relative" align = "center" ></h1>
+
 </div>
 
 
@@ -159,16 +161,19 @@ $(document).ready(function(){
 
   $("#header").fadeIn("slow", function(){
     $("#address").fadeIn();
+      $("#price").fadeIn();
   });
 
 
   var interval = setInterval(function(){
     var t = countdown(new Date(2017, 6, 19));
 
-    document.getElementById('days').innerHTML = t.days;
-    document.getElementById('hours').innerHTML = t.hours;
-    document.getElementById('minutes').innerHTML = t.minutes;
-    document.getElementById('seconds').innerHTML = t.seconds;
+    document.getElementById('days').innerHTML = t.days < 10 ? "0" + t.days : t.days;
+    document.getElementById('hours').innerHTML = t.hours < 10 ? "0" + t.hours : t.hours;
+    document.getElementById('minutes').innerHTML = t.minutes < 10 ? "0" + t.minutes : t.minutes;
+    document.getElementById('seconds').innerHTML = t.seconds < 10 ? "0" + t.seconds : t.seconds;
+
+    document.getElementById('price').innerHTML = "1 ETH = days + 10,000 = " + 10000 + t.days + " SKNCoin";
 
     $("#table").fadeIn('slow');
 
