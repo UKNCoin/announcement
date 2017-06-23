@@ -173,7 +173,8 @@ $(document).ready(function(){
     document.getElementById('minutes').innerHTML = t.minutes < 10 ? "0" + t.minutes : t.minutes;
     document.getElementById('seconds').innerHTML = t.seconds < 10 ? "0" + t.seconds : t.seconds;
 
-    document.getElementById('price').innerHTML = "1 ETH = days + 10,000 = " + 10000 + t.days + " SKNCoin";
+    var increase = "(" + t.days * t.days * 100/10000 + "%)";
+    document.getElementById('price').innerHTML = "1 ETH = (days * days) + 10,000 = " + 10000 + (t.days * t.days) + " SKNCoin "  + increase;
 
     $("#table").fadeIn('slow');
 
